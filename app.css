@@ -1,0 +1,197 @@
+@font-face {
+    font-family: "KH2 ALL MENU",'Times New Roman', Times, serif;
+    src: url(Assets/Fonts/KH2_ALL_MENU_I.TTF);
+}
+
+@font-face {
+    font-family: "Kingdom Hearts", 'Times New Roman', Times, serif;
+    src: url(Assets/Fonts/Kingdom_Hearts_Font.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    background-image: url(Assets/Images/khcom2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    overflow-y: hidden;
+}
+
+.page-title {
+    font-family: "KH2 ALL MENU";
+    font-size: 20px;
+    font-weight: normal;
+    padding: 30px;
+    background: -webkit-linear-gradient(bottom, white, white);
+    background: -o-linear-gradient(top, white, white);
+    background: -moz-linear-gradient(top, white, white);
+    background: linear-gradient(to top, white , rgb(78, 78, 78));
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px rgb(46, 46, 46);
+    -webkit-background-clip: text;
+    background-clip: text;
+    z-index: 1;
+    letter-spacing: -0.05em;
+    position: relative; left: 116px; top: 120px;
+    
+
+}
+    
+.game-counter {
+    font-family: "KH2 ALL MENU";
+    font-size: 30px;
+    font-weight: normal;
+    padding: 4px;
+    position: relative; left: -10px; top: -150px;
+    background: -webkit-linear-gradient(bottom, white, white);
+    background: -o-linear-gradient(top, white, white);
+    background: -moz-linear-gradient(top, white, white);
+    background: linear-gradient(to top, white , rgb(78, 78, 78));
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px rgb(46, 46, 46);
+    -webkit-background-clip: text;
+    background-clip: text;
+}  
+    
+img {
+    z-index: -2;
+    width: 500px;
+    position: relative; left: 30px; top: -100px;
+}
+
+.card {
+    height: 140px;
+    width: 100px;
+    z-index: 1;
+    position: relative; left: -10px; top: -130px;
+    background-color: transparent;
+}
+
+.card.matched .card.value {
+     background-image: url(Assets/Images/emptycard.jpg);
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: left;
+    perspective: 500px;
+}
+
+.game-counter-container {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: tansform 500ms ease-in-out;
+}
+
+.card-back {
+    background-color: transparent;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+  
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0);
+}
+
+.hidden-card {
+    height: 145px;
+    width: 100px;
+    position: relative; left: 0px; top: -3px;
+    transition: transform 100ms ease-in-out;
+}
+
+.card-back:hover .hidden-card {
+    transform: scale(1.1);
+    transition: ease-in-out .2s;
+} 
+
+.card-front:hover .card-value {
+    transform: scale(1.1);
+    transition: ease-in-out .2s;
+} 
+
+.card-value {
+    height: 145px;
+    width: 100px;
+    position: relative; left: 0px; top: -3px; 
+    transition: transform 100ms ease-in-out;
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    font-family: "KH2 ALL MENU";
+    width: 700px;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.overlay-text-small {
+    font-size: .5em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-image: -webkit-linear-gradient(#170200, #5e0701);
+        font-size: 0;
+     }  
+    to {
+        background-image: -webkit-linear-gradient(#170200, #5e0701);
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, auto);
+    }
+    .game-counter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

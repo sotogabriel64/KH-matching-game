@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom Hearts Matching Game</title>
+    <script src="script.js" type="text/javascript" async></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <audio id="audioContainer">
+        <source src="Assets/Audio/KingdomHearts-DearlyBeloved.mp3">
+      </audio>
+    <h1 class="page-title">Matching Game</h1>
+    <div class="overlay-text visible">
+        Click to Start
+    </div>
+    <div id="too-bad-text" class="overlay-text">
+        TOO BAD!
+        <span class="overlay-text-small">Continue?</span>
+    </div>
+    <div id="you-win-text" class="overlay-text">
+        YOU WIN!
+        <span class="overlay-text-small">Restart</span>
+    </div>
+    <img src="Assets/Images/KHLogo3.PNG" alt="kingdom hearts logo">
+    <div class="game-container">
+        <div class="game-counter-container">
+            <div class="game-counter">
+                Time: <span id="time-remaining">100</span>
+            </div>
+            <div class="game-counter">
+                Flips: <span id="flips">0</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/donald.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/hipotion.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/fire.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/soldier.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/oathkeeper.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/donald.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/soldier.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/blizzard.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/kingdomkey.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/fire.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/shadow.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/roxas.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/blizzard.webp">
+            </div>
+        </div>        
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/shadow.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/riku.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/goofy.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/roxas.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/hipotion.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/oathkeeper.webp">
+            </div>
+        </div>     
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/goofy.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/riku.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/kingdomkey.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/mickey.webp">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="hidden-card" src="Assets/Images/AttackCard.png">
+            </div>
+            <div class="card-front card-face">
+                 <img class="card-value" src="Assets/Images/mickey.webp">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
